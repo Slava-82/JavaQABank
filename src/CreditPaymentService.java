@@ -1,12 +1,11 @@
 public class CreditPaymentService {
-    int calculate(double O, double S, double P) {
-        double EP = O * (S / (1 - Math.pow((1 + S), -P)));
-        return (int) EP;
+    public int calculate(double loanAmount, double interestRate, double months) {
+        double monthlyPayment = loanAmount * (interestRate / (1 - Math.pow((1 + interestRate), -months)));
+        return (int) monthlyPayment;
 
-        // O - сумма кредита
-        // S - процентная ставка
-        // P - количество месяцев
-        // EP - ежемесячный платеж
+        //  loanAmount- сумма кредита
+        //  interestRate - процентная ставка
+        //  months - количество месяцев
+        //  monthlyPayment - ежемесячный платеж
     }
-
 }
